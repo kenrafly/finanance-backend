@@ -8,7 +8,7 @@ export const FinancialContextProvider = ({ children }) => {
   const [records, setRecords] = useState([]);
   const [savRecords, setSavRecords] = useState([]);
   const [walRecords, setWalRecords] = useState([]);
-  const url = "http://localhost:3000";
+  const url = "https://financebackend-k2vw.vercel.app";
   const { user } = useUser();
 
   const fetchRecords = async () => {
