@@ -9,6 +9,7 @@ const BalForm = ({ show, setShow }) => {
 
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
+  const [deadline, setDeadline] = useState("");
   const { user } = useUser();
   const { addSavRecord } = useContext(financialContext);
 
@@ -19,6 +20,7 @@ const BalForm = ({ show, setShow }) => {
       date: new Date(),
       title,
       amount: parseFloat(amount),
+      deadline,
     };
 
     addSavRecord(newRecord);
@@ -59,6 +61,17 @@ const BalForm = ({ show, setShow }) => {
                 required
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
+              />
+            </div>
+            <div className="flex flex-col">
+              <label>Deadline:</label>
+              <input
+                className="p-4 border-2 rounded-xl w-1/2 h-5"
+                type="date"
+                value={deadline}
+                onChange={(e) => setDeadline(e.target.value)}
+                placeholder="deadline"
+                required
               />
             </div>
             <button className="justify-center items-center bg-gradient-to-r from-red-500 to-yellow-500 border-2 hover:bg-gradient-to-l hover:cursor-pointer duration-500 transition  border-black rounded-lg px-2">
